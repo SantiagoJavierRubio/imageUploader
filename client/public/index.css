@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FAFAFB;
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    font-family: Montserrat, sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-weight: 500;
+    color: #A9A9A9;
+    font-size: .88rem;
+    display: flex;
+    justify-content: center;
+}
+footer a:link, a:visited, a:hover, a:active{
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+}
