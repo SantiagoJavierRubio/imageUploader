@@ -1,10 +1,10 @@
 import React from "react";
 
-const LoadedImg = () => {
+const LoadedImg = (props) => {
+
+    const { imageData } =  props;
     return(
-        <h1>
-            Loader Img placeholder
-        </h1>
+        <img src={`data:image/jpeg;base64,${imageData.binary}`} />
     )
 }
 

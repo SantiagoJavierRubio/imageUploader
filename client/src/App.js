@@ -11,10 +11,39 @@ function App() {
   const [isLoading, setLoad] = useState(false);
   const [hasFile, setFile] = useState(false);
 
+  const uploadFile = async () => {
+    const data = new FormData();
+    data.append('image', providedFile);
+    try{
+      const response = await axios.post(process.env.REACT_APP_API_URI + '/img/post', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        }
+      });
+      //console.log(response.data);
+      const imageData = await {
+        id: response.data._id,
+        binary: arrayBufferToBase64(response.data.img.data)
+      };
+      setFile(imageData);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  const arrayBufferToBase64 = (buffer) => {
+    var binary = '';
+    var bytes = [].slice.call(new Uint8Array(buffer.data));
+
+    bytes.forEach((b) => binary += String.fromCharCode(b));
+
+    return window.btoa(binary);
+  }
+
   useEffect(()=> {
     if(providedFile){
       setLoad(true);
-      axios.post()
+      uploadFile();
     }
   }, [providedFile]);
 
@@ -26,7 +55,7 @@ function App() {
           : 
           <Loader />
         : 
-        <LoadedImg />
+        <LoadedImg imageData={hasFile} />
       }
     </Container>
   );
