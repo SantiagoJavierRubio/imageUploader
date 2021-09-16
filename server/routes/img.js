@@ -28,8 +28,8 @@ router.post('/post',upload.single('image') ,async (req,res) => {
 router.get('/:id', async (req,res) => {
     try {
         const image = await ImagePost.findById(req.params.id);
-        res.contentType('json');
-        res.send(image);
+        const imageData = image.img.data.toString('base64');
+        res.send('<img src="data:image/jpeg;base64,' + imageData + '" />');
     } catch (err) {
         res.status(409).json({ message: err.message });
     }

@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/styles";
 
 export default makeStyles((theme) => ({
     uploaderMain: {
+        backgroundColor: '#FFF',
         margin: 'auto',
         padding: '1rem',
         display: 'flex',
