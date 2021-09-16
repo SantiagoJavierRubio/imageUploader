@@ -20,7 +20,6 @@ function App() {
           'Content-Type': 'multipart/form-data',
         }
       });
-      //console.log(response.data);
       const imageData = await {
         id: response.data._id,
         binary: arrayBufferToBase64(response.data.img.data)
