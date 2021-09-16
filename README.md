@@ -10,7 +10,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://santiagos-image-uploader.netlify.app/">
+    <a href="https://devchallenges.io/solutions/iTsCGeC2sKyRGUz6IsJI">
       Solution
     </a>
     <span> | </span>
